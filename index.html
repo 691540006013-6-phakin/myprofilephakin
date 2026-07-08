@@ -3,24 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phakin's Cyber Space 2000</title>
+    <title>PHAKIN '06 : THE MIXTAPE COLLAGE</title>
     <style>
-        /* Y2K & Retro Theme Styling */
+        /* 🎨 STREET COLLAGE MASHUP STYLE */
+        :root {
+            --punk-pink: #ff0055;
+            --neon-green: #39ff14;
+            --brit-blue: #0047ab;
+            --football-yellow: #ffd700;
+            --dark-street: #0b0c10;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Tahoma', 'Courier New', monospace;
+            font-family: 'Impact', 'Arial Black', 'Courier New', monospace;
         }
 
         body {
-            background-color: #050515;
+            background-color: var(--dark-street);
+            /* ลายตารางกริดแบบ Y2K ผสมความดาร์ก */
             background-image: 
-                linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
-            background-size: 20px 20px;
-            color: #00ffcc;
-            padding: 20px;
+                radial-gradient(rgba(255, 0, 85, 0.1) 15%, transparent 16%),
+                linear-gradient(rgba(57, 255, 20, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: #fff;
+            padding: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -28,285 +37,319 @@
             overflow-x: hidden;
         }
 
-        /* ลูกเล่นข้อความวิ่งแบบวินเทจ */
-        .marquee-container {
+        /* ⚽ ลูกเล่นที่ 1: แถบวิ่งสไตล์สกอร์บอร์ดข่าวกีฬา / ผลบอลยุค 00s */
+        .football-ticker {
             width: 100%;
-            max-width: 800px;
-            background: #ff0055;
-            color: #fff;
-            padding: 8px;
-            font-weight: bold;
+            max-width: 900px;
+            background: var(--football-yellow);
+            color: #000;
+            border: 4px solid #000;
+            padding: 6px;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            border: 3px double #fff;
-            box-shadow: 0 0 10px #ff0055;
-            margin-bottom: 20px;
+            font-size: 14px;
+            transform: rotate(-1deg);
+            box-shadow: 6px 6px 0px var(--punk-pink);
+            margin-bottom: 25px;
         }
 
-        /* กรอบหน้าต่างสไตล์คอมพิวเตอร์ยุค 00's */
-        .window-container {
-            background: #111125;
-            border: 3px solid #00f0ff;
-            width: 100%;
-            max-width: 800px;
-            border-radius: 12px 12px 0 0;
-            box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
-            overflow: hidden;
-        }
-
-        .window-header {
-            background: linear-gradient(90deg, #00f0ff, #ff0055);
-            padding: 10px 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #fff;
-            font-weight: bold;
-            border-bottom: 3px solid #00f0ff;
-        }
-
-        .window-dots {
-            display: flex;
-            gap: 8px;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #fff;
-        }
-
-        /* ส่วนเนื้อหาภายในหน้าต่าง */
-        .window-content {
-            padding: 30px;
+        /* 🖼️ Main Layout แบบนิตยสารดนตรีคอลลาจ (Zine) */
+        .collage-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        @media (min-width: 768px) {
-            .window-content {
-                grid-template-columns: 280px 1fr;
-            }
-        }
-
-        /* โซนรูปโปรไฟล์และข้อมูลหลัก */
-        .profile-zone {
-            text-align: center;
-            border-right: none;
-            padding-bottom: 20px;
-        }
-
-        @media (min-width: 768px) {
-            .profile-zone {
-                border-right: 2px dashed #00f0ff;
-                padding-right: 30px;
-                padding-bottom: 0;
-            }
-        }
-
-        .image-box {
-            position: relative;
-            width: 200px;
-            height: 250px;
-            margin: 0 auto 20px;
-            border: 4px solid #ff0055;
-            box-shadow: 5px 5px 0px #00f0ff;
-            overflow: hidden;
-        }
-
-        .image-box img {
+            gap: 25px;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-width: 900px;
         }
 
-        .glitch-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: #fff;
-            text-shadow: 2px 2px #ff0055, -2px -2px #00f0ff;
-            margin-bottom: 5px;
+        @media (min-width: 768px) {
+            .collage-grid {
+                grid-template-columns: 350px 1fr;
+            }
         }
 
-        .nickname {
-            background: #00f0ff;
-            color: #000;
-            font-weight: bold;
-            padding: 3px 10px;
-            display: inline-block;
-            transform: rotate(-2deg);
-            margin-bottom: 15px;
-        }
-
-        /* โซนประวัติและข้อมูลเชิงลึก */
-        .info-zone {
+        /* 🎸 แผงซ้าย: อัลบั้มเพลง + การ์ดนักบอลนักรัก */
+        .left-panel {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
 
-        .info-box {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid #333;
-            padding: 15px;
-            border-left: 5px solid #ff0055;
+        /* ดีไซน์รูปโปรไฟล์ผสมการ์ดบอล Retro + ปกซีดี Punk */
+        .profile-card {
+            background: #121212;
+            border: 5px solid #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 10px 10px 0px var(--brit-blue);
         }
 
-        .info-box h3 {
-            color: #ff0055;
-            margin-bottom: 10px;
-            font-size: 16px;
-            text-transform: uppercase;
+        /* ป้ายสติกเกอร์แนว HipHop / Punk Street Art */
+        .parental-advisory {
+            background: #fff;
+            color: #000;
+            padding: 4px 8px;
+            font-size: 11px;
+            font-weight: bold;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            border-radius: 2px;
+            transform: rotate(-5deg);
+            border: 1px solid #000;
+        }
+
+        .jersey-number {
+            position: absolute;
+            bottom: 90px;
+            right: 25px;
+            font-size: 60px;
+            color: var(--neon-green);
+            opacity: 0.8;
+            text-shadow: 3px 3px 0px #000;
+        }
+
+        .profile-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border: 3px solid #000;
+            filter: contrast(1.1) brightness(0.9);
+        }
+
+        .main-title {
+            font-size: 28px;
+            color: var(--neon-green);
+            text-shadow: 3px 3px 0px var(--punk-pink);
+            margin-top: 15px;
             letter-spacing: 1px;
         }
 
-        .info-box p {
-            color: #e0e0ff;
+        .sub-title {
+            font-family: 'Courier New', monospace;
             font-size: 14px;
-            line-height: 1.6;
+            color: #aaa;
+            margin-bottom: 10px;
         }
 
-        .highlight {
-            color: #00f0ff;
-            font-weight: bold;
-        }
-
-        /* ลูกเล่นเสริม: เครื่องเล่นเพลงจำลอง */
-        .music-player {
-            margin-top: 25px;
-            background: #000;
-            border: 2px dashed #00f0ff;
+        /* 📻 ลูกเล่นที่ 2: เครื่องเล่นเทปคาสเซ็ทสลับแนวเพลง (Interactive Mixtape) */
+        .mixtape-box {
+            background: #1c1c24;
+            border: 3px dashed var(--punk-pink);
             padding: 15px;
             text-align: center;
+            box-shadow: 5px 5px 0px #000;
         }
 
-        .player-title {
+        .tape-screen {
+            background: #000;
+            color: var(--neon-green);
+            padding: 8px;
+            font-family: 'Courier New', monospace;
             font-size: 12px;
-            color: #ff0055;
-            margin-bottom: 8px;
-            animation: blink 1s infinite;
+            margin-bottom: 12px;
+            border: 2px solid #333;
+            min-height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .player-controls button {
-            background: #00f0ff;
-            border: none;
+        .genre-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        }
+
+        .genre-btn {
+            background: #fff;
             color: #000;
-            padding: 5px 15px;
-            font-weight: bold;
+            border: 2px solid #000;
+            padding: 6px 2px;
+            font-size: 11px;
             cursor: pointer;
-            margin: 0 5px;
+            font-weight: bold;
+            transition: 0.2s;
         }
 
-        .player-controls button:hover {
-            background: #ff0055;
+        .genre-btn:hover {
+            background: var(--punk-pink);
             color: #fff;
         }
 
-        /* แอนิเมชันกระพริบสไตล์ Retro */
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+        /* 🎬 แผงขวา: ประวัติส่วนตัวสไตล์โปสเตอร์หนังอินดี้ / ตั๋วคอนเสิร์ต */
+        .right-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        /* ตัวนับผู้เข้าชมสไตล์ 00's Web Counter */
-        .visitor-counter {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #888;
+        .section-box {
+            background: #16161a;
+            border: 4px solid #fff;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
         }
-        .counter-badge {
-            background: #222;
-            color: #00ff00;
+
+        /* สไตล์ตั๋วบอลแมตช์เดย์เดือดๆ */
+        .section-box.education {
+            border-left: 15px solid var(--brit-blue);
+            box-shadow: 8px 8px 0px var(--football-yellow);
+        }
+
+        /* สไตล์ฟลายเออร์คอนเสิร์ตแนวพังก์แร็พ */
+        .section-box.internship {
+            border-left: 15px solid var(--punk-pink);
+            box-shadow: 8px 8px 0px var(--neon-green);
+            background-image: linear-gradient(45deg, #1f1215 25%, transparent 25%);
+            background-size: 10px 10px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: #fff;
+            color: #000;
+            padding: 2px 10px;
+            font-size: 12px;
+            margin-bottom: 15px;
+            transform: skewX(-10deg);
+        }
+
+        .section-box h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .education h2 { color: var(--football-yellow); }
+        .internship h2 { color: var(--neon-green); }
+
+        .info-item {
             font-family: 'Courier New', monospace;
-            padding: 2px 6px;
-            border: 1px solid #444;
-            letter-spacing: 2px;
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 10px;
+            color: #e0e0e0;
+            line-height: 1.5;
+        }
+
+        .highlight-text {
+            background: #fff;
+            color: #000;
+            padding: 0 5px;
+            display: inline-block;
+        }
+
+        /* 🛹 สติกเกอร์ตกแต่งท้ายเว็บ */
+        .footer-stickers {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .sticker {
+            border: 2px dashed #444;
+            padding: 5px 10px;
+            transform: rotate(3deg);
         }
     </style>
 </head>
 <body>
 
-    <div class="marquee-container">
-        <marquee scrollamount="8">✦ Welcome to Phakin's Personal Cyber Space Area 2000 ✦ Loading Profile Data... Status: Online ✦</marquee>
+    <div class="football-ticker">
+        <marquee scrollamount="7">⚽ BREAKING NEWS // PHAKIN FC SIGNED NEW PROSPECT 'PAI' AGE 20 // BORN MAY 3, 2006 // STYLE: BRITPOP PUNK MIXTAPE RAP HYPED // LIVE NOW ⚽</marquee>
     </div>
 
-    <div class="window-container">
-        <div class="window-header">
-            <span>phakin_profile.exe</span>
-            <div class="window-dots">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+    <div class="collage-grid">
+        
+        <div class="left-panel">
+            <div class="profile-card">
+                <div class="parental-advisory">PARENTAL<br>ADVISORY<br>EXPLICIT ART</div>
+                <div class="jersey-number">#06</div>
+                
+                <img src="profile.jpg" alt="Phakin Kraiviset">
+                
+                <h1 class="main-title">PHAKIN KRAIVISET</h1>
+                <p class="sub-title">AKA: PAI (ปาย) | AGE: 20</p>
+            </div>
+
+            <div class="mixtape-box">
+                <div class="tape-screen" id="tape-display">
+                    <div style="color: #ff0055; font-weight: bold;">📼 CASSETTE DECK A</div>
+                    <div id="track-name">SELECT YOUR VIBE GENERATION</div>
+                </div>
+                <div class="genre-buttons">
+                    <button class="genre-btn" onclick="changeVibe('BRITPOP')">🇬🇧 BRITPOP</button>
+                    <button class="genre-btn" onclick="changeVibe('PUNK')">🎸 00s PUNK</button>
+                    <button class="genre-btn" onclick="changeVibe('HIPHOP')">🎤 RAP/HIPHOP</button>
+                </div>
             </div>
         </div>
 
-        <div class="window-content">
-            <div class="profile-zone">
-                <div class="image-box">
-                    <img src="profile.jpg" alt="Phakin Kraiviset">
+        <div class="right-panel">
+            
+            <div class="section-box education">
+                <div class="section-tag">🎟️ MATCHDAY EDUCATION TICKET</div>
+                <h2>✦ EDUCATION PROFILE</h2>
+                <div class="info-item">
+                    CURRENT: <span class="highlight-text" style="background: var(--brit-blue); color: #fff;">มหาวิทยาลัยกาฬสินธุ์</span>
                 </div>
-                <div class="glitch-text">PHAKIN KRAIVISET</div>
-                <div class="nickname">AKA: PAI (ปาย)</div>
-                <p style="font-size: 14px; margin-top: 10px;">AGE: <span class="highlight">20 Years Old</span></p>
-                <p style="font-size: 12px; color: #667;">BORN: May 3, 2006</p>
+                <div class="info-item">
+                    MAJOR: <span style="color: var(--football-yellow);">วิศวกรรมคอมพิวเตอร์ (Computer Engineering)</span>
+                </div>
+                <hr style="border: 1px dashed #444; margin: 15px 0;">
+                <div class="info-item">
+                    GRADUATED FROM: วิทยาลัยการอาชีพกาฬสินธุ์
+                </div>
+                <div class="info-item">
+                    OLD MAJOR: สาขาเทคโนโลยีคอมพิวเตอร์
+                </div>
+            </div>
 
-                <div class="music-player">
-                    <div class="player-title" id="track-status">💿 NOW PLAYING: RETRO_TRACK.MP3</div>
-                    <div class="player-controls">
-                        <button onclick="playMusic('PLAYING')">PLAY</button>
-                        <button onclick="playMusic('PAUSED')">STOP</button>
-                    </div>
+            <div class="section-box internship">
+                <div class="section-tag">⚡ LIVE GIG EXPERIENCE</div>
+                <h2>✦ INTERNSHIP DRAMA ART</h2>
+                <div class="info-item">
+                    COMPANY: <span class="highlight-text" style="background: var(--punk-pink); color: #fff;">บริษัทไดกิ้น คอมเพรสเซอร์ อินดัสทรีส์ จำกัด</span>
+                </div>
+                <div class="info-item">
+                    POSITION: <span style="color: var(--neon-green);">External Grinding (ฝ่ายผลิตชิ้นส่วนประกอบ)</span>
+                </div>
+                <div class="info-item" style="font-size: 13px; color: #aaa; margin-top: 10px; font-family: 'sans-serif';">
+                    "เบื้องหลังความเย็นระดับโลก: ปฏิบัติการลุยงานฝีมือ คุมเครื่องจักรเจียรผิวภายนอก ผลิตชิ้นส่วนแกนกลางของคอมเพรสเซอร์ ดุดัน แข็งแกร่ง สไตล์ดิบพังก์!"
                 </div>
             </div>
 
-            <div class="info-zone">
-                <div class="info-box">
-                    <h3>✦ CURRENT EDUCATION</h3>
-                    <p>กำลังศึกษาอยู่ที่ <span class="highlight">มหาวิทยาลัยกาฬสินธุ์</span></p>
-                    <p>คณะวิศวกรรมศาสตร์ สาขา<span class="highlight">วิศวกรรมคอมพิวเตอร์</span></p>
-                </div>
-
-                <div class="info-box">
-                    <h3>✦ EDUCATION HISTORY</h3>
-                    <p>สำเร็จการศึกษาจาก: <span class="highlight">วิทยาลัยการอาชีพกาฬสินธุ์</span></p>
-                    <p>สาขาวิชา: <span class="highlight">เทคโนโลยีคอมพิวเตอร์</span></p>
-                </div>
-
-                <div class="info-box">
-                    <h3>✦ INTERNSHIP EXPERIENCE</h3>
-                    <p>บริษัท: <span class="highlight">ไดกิ้น คอมเพรสเซอร์ อินดัสทรีส์ จำกัด</span></p>
-                    <p>ตำแหน่ง: <span class="highlight">External Grinding</span></p>
-                    <p style="margin-top: 5px; color: #8a8ab5; font-size: 13px;">รายละเอียดงาน: ปฏิบัติหน้าที่ในการผลิตชิ้นส่วนและควบคุมเครื่องจักรสำหรับประกอบคอมเพรสเซอร์</p>
-                </div>
-            </div>
         </div>
     </div>
 
-    <div class="visitor-counter">
-        VISITOR NUMBER: <span class="counter-badge" id="visitor-num">0043921</span>
+    <div class="footer-stickers">
+        <div class="sticker">📻 POP_CLASSIC_REMIX_V1.02</div>
+        <div class="sticker" style="color: var(--neon-green);">⚽ KALASIN ENGINEER 2026</div>
     </div>
 
     <script>
-        // ฟังก์ชันควบคุมเครื่องเล่นเพลงจำลอง
-        function playMusic(status) {
-            const statusText = document.getElementById('track-status');
-            if(status === 'PLAYING') {
-                statusText.innerText = "⚡ NOW PLAYING: Y2K_BEAT_MIX.MP3 (LOOP)";
-                statusText.style.color = "#00ff00";
-            } else {
-                statusText.innerText = "💿 PLAYER STOPPED";
-                statusText.style.color = "#ff0055";
+        // ลูกเล่นเล่นเสียง/แสดงชื่อเพลงตามแนวที่โบร๋เลือกมิกซ์
+        function changeVibe(genre) {
+            const trackName = document.getElementById('track-name');
+            const display = document.getElementById('tape-display');
+            
+            if(genre === 'BRITPOP') {
+                trackName.innerText = "🎵 Oasis - Don't Look Back In Anger (Classic Pop Cut)";
+                display.style.borderColor = "var(--brit-blue)";
+            } else if(genre === 'PUNK') {
+                trackName.innerText = "⚡ Blink-182 / Sum 41 - 00s Skate Punk Mix";
+                display.style.borderColor = "var(--punk-pink)";
+            } else if(genre === 'HIPHOP') {
+                trackName.innerText = "🎤 90s BoomBap x 00s Rap Street Beats";
+                display.style.borderColor = "var(--neon-green)";
             }
         }
-
-        // สุ่มตัวเลขยอดคนดูเพิ่มความสมจริงแบบเว็บยุคปีก่อนๆ
-        setInterval(() => {
-            const counter = document.getElementById('visitor-num');
-            let current = parseInt(counter.innerText);
-            counter.innerText = String(current + Math.floor(Math.random() * 2) + 1).padStart(7, '0');
-        }, 3000);
     </script>
 </body>
 </html>
