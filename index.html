@@ -1,17 +1,26 @@
-<!DOCTYPE html>
+v<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHAKIN | Pop Punk Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&family=Work+Sans:wght@800&display=swap" rel="stylesheet">
+    <title>PHAKIN // 00s Britpop & Y2K Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Syne:wght@700;800&family=Anonymous+Pro:wght@700&family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* รีเซ็ตค่าเริ่มต้นและใส่พื้นหลังลายตารางแบบกรันจ์ */
+        :root {
+            --bg-color: #1c1e21;
+            --panel-bg: #e2dfd5; /* สีรากระดาษปกซีดีเก่า */
+            --oasis-blue: #003049;
+            --oasis-red: #d62828;
+            --y2k-chrome: #8a9a86;
+        }
+
         body {
-            background-color: #1a1a1a;
-            background-image: radial-gradient(#444 2px, transparent 2px);
-            background-size: 20px 20px;
-            font-family: 'Space Mono', monospace; /* ฟอนต์พิมพ์ดีดวินเทจ */
+            background-color: var(--bg-color);
+            background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 15px 15px;
+            font-family: 'Kanit', sans-serif;
             color: #111;
             display: flex;
             justify-content: center;
@@ -19,224 +28,386 @@
             min-height: 100vh;
             margin: 0;
             padding: 20px;
+            box-sizing: border-box;
         }
 
-        /* กรอบหลักของเรซูเม่ */
-        .container {
-            background-color: #f4f4f0; /* สีขาวหม่นกระดาษเก่า */
-            border: 5px solid #111; /* ขอบดำหนา */
-            box-shadow: 15px 15px 0px #d90429; /* เงาสีแดงสุดป๊อปพังก์ */
-            max-width: 900px;
+        /* กล่องดีไซน์ตลับ CD ยุค 00's */
+        .cd-case {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid rgba(255,255,255,0.2);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+            max-width: 950px;
             width: 100%;
+        }
+
+        .container {
+            background-color: var(--panel-bg);
+            border: 4px solid #000;
             display: flex;
             flex-wrap: wrap;
-            position: relative;
         }
 
-        /* คอลัมน์ซ้าย (โปรไฟล์) */
-        .left-col {
-            background-color: #111;
-            color: #f4f4f0;
-            padding: 40px 20px;
+        /* ฝั่งซ้าย: หน้าปกอัลบั้ม / รูปโปรไฟล์ */
+        .album-cover-side {
+            background: #0f1115;
+            color: #fff;
             flex: 1;
-            min-width: 300px;
-            text-align: center;
-            border-right: 5px solid #111;
-        }
-
-        /* คอลัมน์ขวา (ประวัติ) */
-        .right-col {
-            padding: 40px 30px;
-            flex: 2;
-            min-width: 350px;
-            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="%23e0e0e0" stroke-width="1"><path d="M0 0l100 100M100 0L0 100"/></g></svg>');
-            background-size: 300px; /* ลายกากบาทจางๆ พื้นหลัง */
-        }
-
-        /* รูปโปรไฟล์สไตล์โพลาลอยด์ */
-        .profile-polaroid {
-            background: #fff;
-            padding: 10px 10px 35px 10px;
-            border: 3px solid #111;
-            transform: rotate(-4deg); /* เอียงรูปนิดๆ */
-            display: inline-block;
-            box-shadow: 6px 6px 0px #d90429;
-            margin-bottom: 25px;
-            transition: transform 0.2s;
-        }
-
-        .profile-polaroid:hover {
-            transform: rotate(2deg) scale(1.05); /* เอฟเฟกต์ตอนเอาเมาส์ชี้ */
-        }
-
-        .profile-polaroid img {
-            width: 200px;
-            height: 250px;
-            object-fit: cover;
-            border: 2px solid #111;
-            background-color: #333;
-            /* สำคัญ! รูปต้องชื่อ profile.jpg (พิมพ์เล็ก) */
-        }
-
-        /* Typography จัดฟอนต์ */
-        h1, h2, h3 {
-            font-family: 'Work Sans', sans-serif; /* ฟอนต์หัวข้อหนาๆ */
-            text-transform: uppercase;
-        }
-
-        .left-col h1 {
-            font-size: 32px;
-            color: #d90429;
-            text-shadow: 2px 2px 0px #fff, 4px 4px 0px #111; /* ฟอนต์ซ้อนเงา */
-            margin-bottom: 5px;
-            letter-spacing: -1px;
-        }
-
-        .nickname {
-            display: inline-block;
-            background-color: #fff;
-            color: #111;
-            font-weight: bold;
-            padding: 2px 10px;
-            border: 2px solid #111;
-            transform: rotate(2deg);
-            margin: 10px 0 20px 0;
-            box-shadow: 3px 3px 0px #d90429;
-        }
-
-        .info-box {
-            background-color: #d90429;
-            border: 3px solid #fff;
-            padding: 15px;
-            text-align: left;
-            margin-top: 20px;
-            transform: rotate(-1deg);
-        }
-
-        .info-box p {
-            margin: 5px 0;
-            font-weight: bold;
-        }
-
-        /* เส้นไทม์ไลน์ */
-        .right-col h2 {
-            font-size: 30px;
-            display: inline-block;
-            background-color: #111;
-            color: #fff;
-            padding: 5px 15px;
-            margin-top: 0;
-            box-shadow: 4px 4px 0px #d90429;
-            transform: skew(-5deg);
-        }
-
-        .timeline-item {
-            margin-top: 20px;
-            margin-bottom: 30px;
-            border-left: 5px solid #111;
-            padding-left: 20px;
+            min-width: 320px;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-right: 4px solid #000;
             position: relative;
+            overflow: hidden;
         }
 
-        /* ดาวแทนจุด bullet */
-        .timeline-item::before {
-            content: '★';
+        /* ดีไซน์กรอบแผ่นเสียง/แผ่นซีดีหมุนได้ */
+        .cd-disk-wrapper {
+            position: relative;
+            width: 240px;
+            height: 240px;
+            margin-bottom: 30px;
+        }
+
+        .cd-disk {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0 0 0 10px #222, 0 10px 20px rgba(0,0,0,0.5);
+            background: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.5s ease;
+        }
+
+        /* รูปด้านในแผ่นซีดี */
+        .cd-disk img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* เอฟเฟกต์หมุนตอนกดเล่นเพลง */
+        .spinning {
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* รูตรงกลางแผ่นซีดีสไตล์เรโทร */
+        .cd-center {
             position: absolute;
-            left: -17px;
-            top: 0;
-            color: #d90429;
-            font-size: 24px;
-            background: #f4f4f0;
-            text-shadow: 1px 1px 0px #111;
+            width: 40px;
+            height: 40px;
+            background: var(--panel-bg);
+            border: 4px solid #000;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
         }
 
-        .status {
-            background: #d90429;
-            color: #fff;
-            padding: 3px 8px;
-            font-size: 14px;
-            font-weight: bold;
-            border: 2px solid #111;
-            box-shadow: 2px 2px 0px #111;
-            display: inline-block;
+        /* โลโก้วงสไตล์ Oasis กรอบสี่เหลี่ยมหนาๆ */
+        .oasis-logo-style {
+            border: 5px solid #fff;
+            padding: 5px 20px;
+            background-color: #000;
+            font-family: 'Syne', sans-serif;
+            font-size: 38px;
+            font-weight: 800;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1;
             margin-bottom: 10px;
         }
 
-        .status.graduated {
-            background: #111;
+        .oasis-logo-style span {
+            color: var(--oasis-red);
+        }
+
+        .sub-tag {
+            font-family: 'Anonymous Pro', monospace;
+            color: var(--y2k-chrome);
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .meta-spec {
+            font-family: 'VT323', monospace;
+            background: #222;
+            border: 1px dashed #555;
+            padding: 10px 20px;
+            font-size: 20px;
+            width: 80%;
+            color: #00ff66; /* สีจอคอมเก่า Y2K */
+        }
+
+        /* ฝั่งขวา: รายชื่อแทร็กเพลง / ประวัติ */
+        .tracklist-side {
+            flex: 2;
+            min-width: 350px;
+            padding: 40px 35px;
+            box-sizing: border-box;
+        }
+
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 28px;
+            border-bottom: 4px solid #000;
+            padding-bottom: 5px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* ลิสต์รายการแบบแผ่นซีดี */
+        .track-item {
+            display: flex;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .track-number {
+            font-family: 'Anonymous Pro', monospace;
+            font-size: 20px;
+            background: #000;
             color: #fff;
+            padding: 2px 8px;
+            height: fit-content;
+            margin-right: 15px;
         }
 
-        .timeline-item h3 {
-            margin: 0 0 5px 0;
-            font-size: 22px;
-            color: #111;
-            letter-spacing: -0.5px;
+        .track-details {
+            flex: 1;
         }
 
-        .timeline-item p {
+        .track-details h3 {
             margin: 0;
-            font-size: 16px;
+            font-size: 20px;
             font-weight: bold;
-            color: #444;
+            display: flex;
+            align-items: baseline;
         }
 
-        .desc {
-            margin-top: 10px !important;
-            font-size: 14px !important;
-            border: 2px dashed #111;
-            padding: 10px;
-            background: #fff;
-            font-weight: normal !important;
+        .track-details h3::after {
+            content: "............................................................................................................................................................................";
+            white-space: nowrap;
+            overflow: hidden;
+            letter-spacing: 2px;
+            color: #999;
+            margin-left: 10px;
+            flex: 1;
+        }
+
+        .track-time {
+            font-family: 'Anonymous Pro', monospace;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .track-sub {
+            color: #444;
+            margin: 5px 0 0 0;
+            font-size: 16px;
+        }
+
+        .track-desc {
+            background: rgba(0,0,0,0.05);
+            border-left: 3px solid var(--oasis-blue);
+            padding: 8px 12px;
+            margin: 8px 0 0 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* มิวสิคเพลเยอร์ด้านล่างสุด (ลูกเล่น) */
+        .winamp-bar {
+            background: #222;
+            color: #fff;
+            border: 4px solid #000;
+            border-top: none;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .player-info {
+            font-family: 'VT323', monospace;
+            font-size: 22px;
+            color: #00ff66;
+            flex: 1;
+        }
+
+        /* กราฟ Equalizer ดุ๊กดิ๊ก */
+        .equalizer {
+            display: flex;
+            align-items: flex-end;
+            height: 30px;
+            gap: 3px;
+            margin-right: 20px;
+        }
+
+        .eq-bar {
+            width: 4px;
+            height: 5px;
+            background: #00ff66;
+            transition: height 0.1s ease;
+        }
+
+        /* อนิเมชันกราฟวิ่งตอนเปิดเพลง */
+        .eq-active .eq-bar:nth-child(1) { animation: bounce 0.5s ease infinite alternate; }
+        .eq-active .eq-bar:nth-child(2) { animation: bounce 0.8s ease infinite alternate 0.2s; }
+        .eq-active .eq-bar:nth-child(3) { animation: bounce 0.4s ease infinite alternate 0.1s; }
+        .eq-active .eq-bar:nth-child(4) { animation: bounce 0.6s ease infinite alternate 0.3s; }
+        .eq-active .eq-bar:nth-child(5) { animation: bounce 0.7s ease infinite alternate 0s; }
+
+        @keyframes bounce {
+            0% { height: 5px; }
+            100% { height: 30px; }
+        }
+
+        .player-controls button {
+            background: #e2dfd5;
+            border: 2px solid #fff;
+            box-shadow: 2px 2px 0 #000;
+            padding: 5px 15px;
+            font-family: 'Anonymous Pro', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .player-controls button:active {
+            box-shadow: 0px 0px 0 #000;
+            transform: translate(2px, 2px);
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- ด้านซ้าย: โปรไฟล์ -->
-        <div class="left-col">
-            <div class="profile-polaroid">
-                <!-- ตรวจสอบชื่อไฟล์รูปของคุณให้ตรงกับตรงนี้นะครับ -->
-                <img src="profile.jpg" alt="Phakin Profile">
-            </div>
-            <h1>ภาคิน ไกรวิเศษ</h1>
-            <p style="font-size: 18px; margin: 0;">Phakin Kraiwiset</p>
+    <div class="cd-case">
+        <div class="container">
             
-            <div class="nickname">ชื่อเล่น: ปาย</div>
+            <div class="album-cover-side">
+                <div class="cd-disk-wrapper">
+                    <div class="cd-center"></div>
+                    <div class="cd-disk" id="cdDisk">
+                        <img src="eiei.jpeg" alt="Phakin">
+                    </div>
+                </div>
 
-            <div class="info-box">
-                <p>AGE: 20 ปี</p>
-                <p>DOB: 3 พฤษภาคม 2549</p>
+                <div class="oasis-logo-style">PHAKIN</div>
+                <div class="sub-tag">DIGITAL ALBUM COMPILATION</div>
+
+                <div class="meta-spec">
+                    <div>> NAME: PHAKIN KRAIWISET</div>
+                    <div>> NICKNAME: PAI (ปาย)</div>
+                    <div>> AGE: 20 YRS OLD</div>
+                    <div>> DOB: 03/05/2549</div>
+                </div>
+            </div>
+
+            <div class="tracklist-side">
+                
+                <h2 class="section-title"><span>EDUCATION</span> <span style="font-size:16px;">SIDE A</span></h2>
+                
+                <div class="track-item">
+                    <div class="track-number">01</div>
+                    <div class="track-details">
+                        <h3>มหาวิทยาลัยกาฬสินธุ์</h3>
+                        <p class="track-sub">สาขาวิศวกรรมคอมพิวเตอร์</p>
+                    </div>
+                    <div class="track-time">[กำลังศึกษา]</div>
+                </div>
+
+                <div class="track-item">
+                    <div class="track-number">02</div>
+                    <div class="track-details">
+                        <h3>วิทยาลัยการอาชีพกาฬสินธุ์</h3>
+                        <p class="track-sub">สาขาเทคโนโลยีคอมพิวเตอร์</p>
+                    </div>
+                    <div class="track-time">[จบการศึกษา]</div>
+                </div>
+
+                <h2 class="section-title"><span>EXPERIENCE</span> <span style="font-size:16px;">SIDE B</span></h2>
+
+                <div class="track-item">
+                    <div class="track-number">03</div>
+                    <div class="track-details">
+                        <h3>บ.ไดกิ้น คอมเพรสเซอร์ อินดัสทรีส์</h3>
+                        <p class="track-sub">ตำแหน่ง: External Grinding</p>
+                        <p class="track-desc">ดูแลและรับผิดชอบในส่วนงานผลิตชิ้นส่วนประกอบของคอมเพรสเซอร์ (Compressor Components Manufacturing)</p>
+                    </div>
+                    <div class="track-time">[INTERN]</div>
+                </div>
+
             </div>
         </div>
 
-        <!-- ด้านขวา: ประวัติ -->
-        <div class="right-col">
-            <h2>ประวัติการศึกษา</h2>
+        <div class="winamp-bar">
+            <div class="player-info" id="playerStatus">
+                STBY // PRESS PLAY TO SPIN THE ALBUM
+            </div>
             
-            <div class="timeline-item">
-                <div class="status">กำลังศึกษา</div>
-                <h3>มหาวิทยาลัยกาฬสินธุ์</h3>
-                <p>สาขาวิศวกรรมคอมพิวเตอร์</p>
+            <div class="equalizer" id="eqGroup">
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
             </div>
 
-            <div class="timeline-item">
-                <div class="status graduated">สำเร็จการศึกษา</div>
-                <h3>วิทยาลัยการอาชีพกาฬสินธุ์</h3>
-                <p>สาขาเทคโนโลยีคอมพิวเตอร์</p>
-            </div>
-
-            <br>
-            <h2>ประวัติการฝึกงาน</h2>
-
-            <div class="timeline-item">
-                <div class="status">บริษัทไดกิ้น คอมเพรสเซอร์ อินดัสทรีส์ จำกัด</div>
-                <h3>ตำแหน่ง: External Grinding</h3>
-                <p class="desc">รับผิดชอบในส่วนงานผลิตชิ้นส่วนประกอบของคอมเพรสเซอร์ (Compressor Components Manufacturing)</p>
+            <div class="player-controls">
+                <button id="playBtn">PLAY</button>
             </div>
         </div>
     </div>
 
+    <script>
+        const playBtn = document.getElementById('playBtn');
+        const cdDisk = document.getElementById('cdDisk');
+        const eqGroup = document.getElementById('eqGroup');
+        const playerStatus = document.getElementById('playerStatus');
+
+        let isPlaying = false;
+
+        playBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            if(isPlaying) {
+                playBtn.innerText = "STOP";
+                playBtn.style.background = "#d62828";
+                playBtn.style.color = "#fff";
+                cdDisk.classList.add('spinning');
+                eqGroup.classList.add('eq-active');
+                playerStatus.innerText = "NOW PLAYING: OASIS - LIVE FOREVER.MP3";
+            } else {
+                playBtn.innerText = "PLAY";
+                playBtn.style.background = "#e2dfd5";
+                playBtn.style.color = "#111";
+                cdDisk.classList.remove('spinning');
+                eqGroup.classList.remove('eq-active');
+                playerStatus.innerText = "STBY // PRESS PLAY TO SPIN THE ALBUM";
+            }
+        });
+    </script>
 </body>
 </html>
